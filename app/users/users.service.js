@@ -13,5 +13,6 @@ angular.module('angularfireSlackApp')
       all: users
     };
 
+    //return all users
     return Users;
   });
