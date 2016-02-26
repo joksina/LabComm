@@ -1,15 +1,7 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name angularfireSlackApp
- * @description
- * # angularfireSlackApp
- *
- * Main module of the application.
- */
 angular
-  .module('angularfireSlackApp', [
+  .module('labComm', [
     'firebase',
     'angular-md5',
     'ui.router'
@@ -31,7 +23,8 @@ angular
       })
       .state('login', {
         url: '/login',
-        controller: 'AuthCtrl as authCtrl',
+        controller: 'AuthController',
+        controllerAs: 'authCtrl',
         templateUrl: 'auth/login.html',
         resolve: {
           requireNoAuth: function ($state, Auth) {
@@ -45,7 +38,8 @@ angular
       })
       .state('register', {
         url: '/register',
-        controller: 'AuthCtrl as authCtrl',
+        controller: 'AuthController',
+        controllerAs: 'authCtrl',
         templateUrl: 'auth/register.html',
         resolve: {
           requireNoAuth: function ($state, Auth) {
@@ -59,7 +53,8 @@ angular
       })
       .state('profile', {
         url: '/profile',
-        controller: 'ProfileCtrl as profileCtrl',
+        controller: 'ProfileController',
+        controllerAs: 'profileCtrl',
         templateUrl: 'users/profile.html',
         resolve: {
           auth: function($state, Users, Auth) {
@@ -76,7 +71,8 @@ angular
       })
       .state('channels', {
         url: '/channels',
-        controller: 'ChannelsCtrl as channelsCtrl',
+        controller: 'ChannelsController',
+        controllerAs: 'channelsCtrl',
         templateUrl: 'channels/index.html',
         resolve: {
           channels: function (Channels) {
@@ -99,13 +95,15 @@ angular
       })
       .state('channels.create', {
         url: '/create',
-        templateUrl: 'channels/create.html',
-        controller: 'ChannelsCtrl as channelsCtrl'
+        controller: 'ChannelsController',
+        controllerAs: 'channelsCtrl',
+        templateUrl: 'channels/create.html'
       })
       .state('channels.messages', {
         url: '/{channelId}/messages',
+        controller: 'MessagesController',
+        controllerAs: 'messagesCtrl',
         templateUrl: 'channels/messages.html',
-        controller: 'MessagesCtrl as messagesCtrl',
         resolve: {
           messages: function($stateParams, Messages) {
             return Messages.forChannel($stateParams.channelId).$loaded();
@@ -117,8 +115,9 @@ angular
       })
       .state('channels.direct', {
         url: '/{uid}/messages/direct',
+        controller: 'MessagesController',
+        controllerAs: 'messagesCtrl',
         templateUrl: 'channels/messages.html',
-        controller: 'MessagesCtrl as messagesCtrl',
         resolve: {
           messages: function($stateParams, Messages, profile) {
             return Messages.forUsers($stateParams.uid, profile.$id).$loaded();
