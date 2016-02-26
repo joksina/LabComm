@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('labComm', [
+  .module('angularfireSlackApp', [
     'firebase',
     'angular-md5',
     'ui.router'

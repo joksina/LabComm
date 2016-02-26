@@ -1,4 +1,4 @@
-angular.module('labComm')
+angular.module('angularfireSlackApp')
   .controller('ChannelsController', function ($state, Auth, Users, profile, channels) {
     var channelsCtrl = this;
 

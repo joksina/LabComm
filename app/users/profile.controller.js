@@ -1,4 +1,4 @@
-angular.module('labComm')
+angular.module('angularfireSlackApp')
   .controller('ProfileController', function($state, md5, auth, profile) {
     var profileCtrl = this;
 

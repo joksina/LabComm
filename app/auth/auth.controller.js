@@ -1,4 +1,4 @@
-angular.module('labComm')
+angular.module('angularfireSlackApp')
   .controller('AuthController', function (Auth, $state) {
     var authCtrl = this;
 
