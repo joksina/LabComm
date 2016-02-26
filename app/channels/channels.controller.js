@@ -1,5 +1,5 @@
-angular.module('angularfireSlackApp')
-  .controller('ChannelsCtrl', function ($state, Auth, Users, profile, channels) {
+angular.module('labComm')
+  .controller('ChannelsController', function ($state, Auth, Users, profile, channels) {
     var channelsCtrl = this;
 
     channelsCtrl.profile = profile;
@@ -20,8 +20,13 @@ angular.module('angularfireSlackApp')
 
     channelsCtrl.users =  Users.all;
 
-    channelsCtrl.logout = function() {
-      Auth.$unauth();
-      $state.go('home');
+    Users.setOnline(profile.$id);
+
+    channelsCtrl.logout = function(){
+      channelsCtrl.profile.online = null;
+      channelsCtrl.profile.$save().then(function(){
+        Auth.$unauth();
+        $state.go('home');
+      });
     };
   });
