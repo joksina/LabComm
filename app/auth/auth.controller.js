@@ -1,5 +1,5 @@
-angular.module('angularfireSlackApp')
-  .controller('AuthCtrl', function (Auth, $state) {
+angular.module('labComm')
+  .controller('AuthController', function (Auth, $state) {
     var authCtrl = this;
 
     //creating the user
