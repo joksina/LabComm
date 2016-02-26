@@ -1,8 +1,4 @@
 {
-  "firebase": "labchat",
-  "public": "dist",
-  "ignore": [
-    "firebase.json",
-    "**/node_modules/**"
-  ]
+  "firebase": "chatroom",
+  "public": "dist"
 }
