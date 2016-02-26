@@ -1,4 +1,4 @@
-angular.module('angularfireSlackApp')
+angular.module('labComm')
   .factory('Auth', function($firebaseAuth, FirebaseUrl){
     var ref = new Firebase(FirebaseUrl);
     var auth = $firebaseAuth(ref);
