@@ -206,14 +206,18 @@ body {
   font-weight: normal;
   font-size:10px;
 }
-body {
-    background: url('http://i.imgur.com/DNVfMLd.gif') no-repeat fixed center center;
-    background-size: cover;
-    font-family: Montserrat;
-}
+
 
 .awesome {
   color: grey;
+  position:fixed;
+  bottom:0;
+  height:80px;
+  width:100%;
+  margin: 0 auto;
+  left: 40%;
+  align-items: center;
+
 }
 .navbar-default {
     background-color: transparent;
@@ -229,7 +233,7 @@ body {
 }
 
 .msg {
-  width: 600px;
+  width: 650px;
   height: 300px;
   padding: 20px;
   color: #F8F8F8;
@@ -243,6 +247,16 @@ body {
   margin-top: 5em;
   margin-bottom: -15em;
   border: 2px solid rgba(255, 255, 255, 0.0);
+}
+
+.log {
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:500px;
+  height:300px;
+  margin-top: -15em;
+  margin-left: -17em;
 }
 
 .login-block h1 {
