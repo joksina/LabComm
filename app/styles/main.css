@@ -2,6 +2,7 @@ body {
   padding: 0;
 }
 
+
 .page-wrapper {
   max-width:550px;
   margin-right: auto;
@@ -211,6 +212,12 @@ body {
     font-family: Montserrat;
 }
 
+.awesome {
+  color: grey;
+}
+.navbar-default {
+    background-color: transparent;
+}
 
 .login-block {
     width: 100%;
@@ -219,6 +226,23 @@ body {
     border-radius: 12px;
     margin: 0 auto;
     border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.msg {
+  width: 600px;
+  height: 300px;
+  padding: 20px;
+  color: #F8F8F8;
+  background: rgba(0, 0, 0, 0.65098);
+  border-radius: 12px;
+  margin: 0 auto;
+  font-size: 200%;
+  font-family: Comic Sans MS;
+  top: 50%;
+  left: 50%;
+  margin-top: 5em;
+  margin-bottom: -15em;
+  border: 2px solid rgba(255, 255, 255, 0.0);
 }
 
 .login-block h1 {

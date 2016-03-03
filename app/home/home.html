@@ -1,11 +1,41 @@
-<div class="page-wrapper">
-
-  <div class="page-header">
-    <h1><img class="logo-img" src="images/logo.png" /> Welcome to LabComm</h1>
-  </div>
-  
-  <p class="text-center">
-    <a ui-sref="login" class="btn btn-lg btn-default">Login</a> or <a ui-sref="register" class="btn btn-lg btn-primary">Register</a>
-  </p>
-
+<div class="page-wrapper" id='home'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <nav class="navbar navbar-default navbar-fixed-top">
+   <a class="navbar-brand" href="#">ChatComm</a>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+      <li><a ui-sref="register"><span class="glyphicon glyphicon-registration-mark"></span> Register </a></li>
+    </ul>
+  </nav>
 </div>
+<br>
+<div class="msg">
+  <p id="msg" > 
+    <span id="text_target"></span>
+  </p>
+</div>
+
+<!-- <div class="awesome">
+  <a target="_blank" href="https://www.facebook.com/"> <i class="fa fa-facebook-official fa-3x" style="color: grey">&nbsp;</i> </a>
+  <a target="_blank" href="https://www.linkedin.com/pub/ajoke-salaudeen/a4/661/595"><i class="fa fa-linkedin-square fa-3x" style="color: grey">&nbsp;</i></a>
+  <a target="_blank" href="https://github.com/joksina?tab=repositories"><i class="fa fa-github-alt fa-3x" style="color: grey">&nbsp;</i></a>
+  <a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter fa-3x" style="color: grey">&nbsp;</i></a>
+  <a target="_blank" href="mailto:jksalaudeen@yahoo.com"><i class="fa fa-envelope fa-3x" style="color: grey">&nbsp;</i></a>
+</div>
+ -->
+<script type="text/javascript">
+ var showText = function (target, message, index, interval) {    
+  if (index < message.length) { 
+    $(target).append(message[index++]); 
+    setTimeout(function () { showText(target, message, index, interval); }, interval); 
+  } 
+}
+    
+$(function () { 
+
+  var test = "Hello World! Welcome to my Chat Application, This is my attempt of creating the Slack Clone. It's not great yet, until we have emojis and giphy!!"
+ 
+  showText("#msg", test, 0, 100);    
+ 
+}); 
+</script>
