@@ -1,4 +1,11 @@
-<div class="page-wrapper" id='home'>
+<style type="text/css"> 
+  body {
+    background: url('http://i.imgur.com/DNVfMLd.gif') no-repeat fixed center center;
+    background-size: cover;
+    font-family: Montserrat;
+  }
+</style>
+<div class="page-wrapper">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <nav class="navbar navbar-default navbar-fixed-top">
    <a class="navbar-brand" href="#">ChatComm</a>
@@ -14,28 +21,24 @@
     <span id="text_target"></span>
   </p>
 </div>
-
-<!-- <div class="awesome">
+<script type="text/javascript">
+  var showText = function (target, message, index, interval) {    
+    if (index < message.length) { 
+      $(target).append(message[index++]); 
+      setTimeout(function () { showText(target, message, index, interval); }, interval); 
+    } 
+  }
+    
+  $(function () { 
+    var test = "Hello World!!! Welcome to my Chat Application. This is my attempt at creating a Slack Clone. It is still a work in progress!! Please Login and Explore, And don't forget to connect with me below :)";
+   
+    showText("#msg", test, 0, 100);  
+  }); 
+</script>
+<div class="page-wrapper awesome">
   <a target="_blank" href="https://www.facebook.com/"> <i class="fa fa-facebook-official fa-3x" style="color: grey">&nbsp;</i> </a>
   <a target="_blank" href="https://www.linkedin.com/pub/ajoke-salaudeen/a4/661/595"><i class="fa fa-linkedin-square fa-3x" style="color: grey">&nbsp;</i></a>
   <a target="_blank" href="https://github.com/joksina?tab=repositories"><i class="fa fa-github-alt fa-3x" style="color: grey">&nbsp;</i></a>
   <a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter fa-3x" style="color: grey">&nbsp;</i></a>
   <a target="_blank" href="mailto:jksalaudeen@yahoo.com"><i class="fa fa-envelope fa-3x" style="color: grey">&nbsp;</i></a>
 </div>
- -->
-<script type="text/javascript">
- var showText = function (target, message, index, interval) {    
-  if (index < message.length) { 
-    $(target).append(message[index++]); 
-    setTimeout(function () { showText(target, message, index, interval); }, interval); 
-  } 
-}
-    
-$(function () { 
-
-  var test = "Hello World! Welcome to my Chat Application, This is my attempt of creating the Slack Clone. It's not great yet, until we have emojis and giphy!!"
- 
-  showText("#msg", test, 0, 100);    
- 
-}); 
-</script>
